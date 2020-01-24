@@ -29,17 +29,20 @@ namespace Leave_Managment.Repository
 
         public ICollection<LeaveHistory> FindAll()
         {
-            return _db.leaveHistories.ToList();
+            var LeaveHistorys = _db.leaveHistories.ToList();
+            return LeaveHistorys;
         }
 
         public LeaveHistory FindById(int id)
         {
-            return _db.leaveHistories.Find(id);
+            var LeaveHistory = _db.leaveHistories.Find(id);
+            return LeaveHistory;
         }
 
-        public ICollection<LeaveHistory> GetEmployeesByLeaveHistory(int id)
+        public bool isExists(int id)
         {
-            throw new NotImplementedException();
+            var exists = _db.leaveHistories.Any(q => q.Id == id);
+            return exists;
         }
 
         public bool Save()

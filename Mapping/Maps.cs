@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace Leave_Managment.Mapping
 {
-    public class Mapper : Profile
+    public class Maps : Profile
     {
-       public Mapper()
+       public Maps()
         {
             CreateMap<LeaveType, LeaveTypeModel>().ReverseMap();
-            CreateMap<LeaveType, CreateLeaveTypeModel>().ReverseMap();
             CreateMap<LeaveHistory, LeaveHistoryModel>().ReverseMap();
             CreateMap<LeaveAllocation, LeaveAllocationModel>().ReverseMap();
             CreateMap<Employee, EmployeeModel>().ReverseMap();

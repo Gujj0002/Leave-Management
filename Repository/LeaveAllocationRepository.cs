@@ -29,17 +29,20 @@ namespace Leave_Managment.Repository
 
         public ICollection<LeaveAllocation> FindAll()
         {
-            return _db.leaveAllocations.ToList();
+            var LeaveAllocations = _db.leaveAllocations.ToList();
+            return LeaveAllocations;
         }
 
         public LeaveAllocation FindById(int id)
         {
-            return _db.leaveAllocations.Find(id);
+            var LeaveAllocation = _db.leaveAllocations.Find(id);
+            return LeaveAllocation;
         }
 
-        public ICollection<LeaveAllocation> GetEmployeesByLeaveAllocation(int id)
+        public bool isExists(int id)
         {
-            throw new NotImplementedException();
+            var exists = _db.leaveAllocations.Any(q => q.Id == id);
+            return exists;
         }
 
         public bool Save()

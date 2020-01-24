@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Leave_Managment.Repository;
 using Leave_Managment.Contracts;
 using AutoMapper;
+using Leave_Managment.Mapping;
 
 namespace Leave_Managment
 {
@@ -39,7 +40,7 @@ namespace Leave_Managment
             services.AddScoped<ILeaveHistoryRepository, LeaveHistoryRepository>();
             services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
 
-            services.AddAutoMapper(typeof(Mapper));
+            services.AddAutoMapper(typeof(Maps));
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();

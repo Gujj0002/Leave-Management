@@ -30,17 +30,24 @@ namespace Leave_Managment.Repository
 
         public ICollection<LeaveType> FindAll()
         {
-            return _db.leaveTypes.ToList();
+            var leaveTypes = _db.leaveTypes.ToList();
+            return leaveTypes;
         }
 
         public LeaveType FindById(int id)
         {
-            return _db.leaveTypes.Find(id);
+            var leaveType = _db.leaveTypes.Find(id);
+            return leaveType;
         }
 
         public ICollection<LeaveType> GetEmployeesByLeaveType(int id)
         {
             throw new NotImplementedException();
+        }
+        public bool isExists(int id)
+        {
+            var exists = _db.leaveTypes.Any(q => q.Id == id);
+            return exists;
         }
 
         public bool Save()
