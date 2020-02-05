@@ -10,7 +10,7 @@ namespace Leave_Managment
     public class SeedData
     {
         public static void Seed(UserManager<Employee> userManager,
-            RoleManager<IdentityRole> roleManager)
+             RoleManager<IdentityRole> roleManager)
         {
             SeedRoles(roleManager);
             SeedUsers(userManager);

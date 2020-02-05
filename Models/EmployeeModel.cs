@@ -25,5 +25,6 @@ namespace Leave_Managment.Models
         public DateTime DateOfBirth { get; set; }
         [Display(Name = "Join Date")]
         public DateTime DateJoined { get; set; }
+
     }
 }

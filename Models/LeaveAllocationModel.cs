@@ -11,18 +11,19 @@ namespace Leave_Managment.Models
     public class LeaveAllocationModel
     {
         public int Id { get; set; }
-      
+        [Display(Name = "Number Of Days")]
+
         public int NumberOfDays { get; set; }
         public DateTime DateCreated { get; set; }
         public int Period { get; set; }
-        [ForeignKey("EmployeeId")]
+
         public EmployeeModel Employee { get; set; }
         public string EmployeeId { get; set; }
-        [ForeignKey("LeaveTypeId")]
+
         public LeaveTypeModel LeaveType { get; set; }
         public int LeaveTypeId { get; set; }
-        
     }
+
     public class CreateLeaveAllocationVM
     {
         public int NumberUpdated { get; set; }
@@ -30,7 +31,7 @@ namespace Leave_Managment.Models
     }
 
     public class EditLeaveAllocationVM
-    {   
+    {
         public int Id { get; set; }
 
         public EmployeeModel Employee { get; set; }
@@ -46,7 +47,7 @@ namespace Leave_Managment.Models
     {
         public EmployeeModel Employee { get; set; }
         public string EmployeeId { get; set; }
-        public List<LeaveAllocationModel> LeaveAllocations { get; set; }
+        public List<LeaveAllocationModel    > LeaveAllocations { get; set; }
     }
 }
 
