@@ -21,6 +21,7 @@ namespace Leave_Managment
 {
     public class Startup
     {
+       
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -36,7 +37,7 @@ namespace Leave_Managment
                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
-            services.AddScoped<ILeaveHistoryRepository, LeaveHistoryRepository>();
+            services.AddScoped<ILeaveRequestRepository, LeaveRequestRepository>();
             services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
 
             services.AddAutoMapper(typeof(Maps));
